@@ -208,19 +208,6 @@ article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
 .social-icons a.icon-x:hover { background: #000; border-color: #555; box-shadow: 0 0 20px #555; }
 .social-icons a.icon-gh:hover { background: #333; border-color: #333; box-shadow: 0 0 20px #333; }
 
-/* Efekt najechania na wiersz specyfikacji */
-.spec-row {
-    transition: all 0.3s ease; /* Żeby podświetlenie pojawiało się płynnie */
-    cursor: default;
-}
-
-.spec-row:hover {
-    background: rgba(56, 189, 248, 0.15); /* Delikatny niebieski kolor tła */
-    transform: scale(1.02); /* Lekkie powiększenie kafelka */
-    border-left: 4px solid var(--accent); /* Dodatkowy pasek z boku */
-    padding-left: calc(2rem - 4px); /* Korekta paddingu przez pasek */
-}
-
 /* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; text-align: center; }
