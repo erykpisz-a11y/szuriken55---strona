@@ -9,7 +9,6 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
@@ -64,7 +63,7 @@ body {
     font-weight: 700;
 }
 
-/* --- NAWIGACJA (NAPRAWA RESPONSYWNOŚCI) --- */
+/* --- NAWIGACJA --- */
 nav {
     position: sticky;
     top: 0;
@@ -80,7 +79,7 @@ nav ul {
     justify-content: center; 
     gap: 1.5rem; 
     list-style: none; 
-    flex-wrap: wrap; /* Naprawa wychodzenia poza ekran */
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -97,7 +96,6 @@ nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
 /* --- HERO BANNER --- */
 .hero-banner { display: flex; justify-content: center; padding: 3rem 1rem; }
-
 .hero-img-container {
     position: relative;
     max-width: 800px;
@@ -105,7 +103,6 @@ nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
     overflow: hidden;
     border: 3px solid var(--card-bg);
 }
-
 .main-photo {
     width: 100%;
     height: auto;
@@ -133,7 +130,6 @@ nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
 /* --- CONTENT --- */
 .container-fluid { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-
 article {
     background-color: rgba(17, 25, 40, 0.8);
     backdrop-filter: blur(5px);
@@ -143,12 +139,41 @@ article {
     border-left: 5px solid var(--accent);
     scroll-margin-top: 100px;
 }
-
 article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+/* --- SLIDER (POPRAWIONY) --- */
+.section-title { font-size: 2.5rem; color: var(--neon-green); text-align: center; margin-bottom: 2rem; font-family: 'Comic Neue'; }
+.slider-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
+
+.slider-track { 
+    display: flex; 
+    aspect-ratio: 16 / 9; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slider-track img { 
+    flex: 0 0 100%; /* To naprawia rozmiar zdjęć! */
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    scroll-snap-align: start; 
+}
+
+.slider-nav { 
+    display: flex; gap: 15px; position: absolute; bottom: 20px; left: 50%; 
+    transform: translateX(-50%); z-index: 10;
+}
+.slider-nav a { 
+    width: 15px; height: 15px; border-radius: 50%; background: #fff; 
+    opacity: 0.7; border: 2px solid var(--accent); transition: 0.3s;
+}
+.slider-nav a:hover { opacity: 1; background: var(--accent); transform: scale(1.2); }
 
 /* --- SEKCJA HARDWARE --- */
 .setup-section { padding: 2rem 0; width: 100%; }
-
 .setup-wide-container {
     background: rgba(30, 41, 59, 0.7);
     border-radius: 20px;
@@ -156,100 +181,39 @@ article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
     overflow: hidden;
     width: 100%;
 }
-
 .spec-row {
     display: flex;
     align-items: center;
     padding: 1.5rem 2rem;
     border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
-
-.spec-icon {
-    font-size: 2.5rem;
-    color: var(--accent);
-    width: 80px;
-    text-align: center;
-}
-
+.spec-icon { font-size: 2.5rem; color: var(--accent); width: 80px; text-align: center; }
 .spec-details h4 { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; }
 .spec-details p { font-size: 1.3rem; font-weight: 700; }
-
 .neon-text-green { color: var(--neon-green); }
 .neon-text-blue { color: var(--neon-blue); }
 
-/* --- SLIDER (NAPRAWIONY - KROPKI) --- */
-.section-title { font-size: 2.5rem; color: var(--neon-green); text-align: center; margin-bottom: 2rem; font-family: 'Comic Neue'; }
-
-.slider-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
-
-.slider-track { display: flex; aspect-ratio: 16 / 9; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-
-.slider-track img { flex: 0 0 100%; width: 100%; object-fit: cover; scroll-snap-align: start; }
-
-.slider-nav { 
-    display: flex; 
-    gap: 15px; 
-    position: absolute; 
-    bottom: 20px; 
-    left: 50%; 
-    transform: translateX(-50%);
-    z-index: 10;
-}
-
-.slider-nav a { 
-    width: 15px; 
-    height: 15px; 
-    border-radius: 50%; 
-    background: #fff; 
-    opacity: 0.7; 
-    border: 2px solid var(--accent);
-    transition: 0.3s;
-}
-
-.slider-nav a:hover { opacity: 1; background: var(--accent); transform: scale(1.2); }
-
-/* --- SOCIAL MEDIA (NAPRAWIONE KOLORY I ROZMIAR) --- */
+/* --- SOCIAL MEDIA --- */
 .main-footer { background: #020617; padding: 4rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    list-style: none;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
 .social-icons a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    border: 2px solid var(--accent);
-    padding: 0.8rem 1.6rem;
-    font-size: 1.2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    color: #fff; text-decoration: none; font-weight: 700; border: 2px solid var(--accent);
+    padding: 0.8rem 1.6rem; font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
+    display: flex; align-items: center; gap: 10px;
 }
-
 .social-icons a:hover { transform: scale(1.1); color: #fff; }
-
 .social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
 .social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; box-shadow: 0 0 20px #9146ff; }
 .social-icons a.icon-tt:hover { background: #000; border-color: #fff; box-shadow: 0 0 20px #fff; }
 .social-icons a.icon-x:hover { background: #000; border-color: #555; box-shadow: 0 0 20px #555; }
 .social-icons a.icon-gh:hover { background: #333; border-color: #333; box-shadow: 0 0 20px #333; }
 
-/* MEDIA QUERIES (RESPONSYWNOŚĆ) */
+/* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; text-align: center; }
     .brand { order: 2; font-size: 1.5rem; }
     .huge-title { order: 1; font-size: 2.2rem; margin-bottom: 10px; }
-    .header-right { order: 3; }
-    
-    .spec-row { flex-direction: row; text-align: left; padding: 1rem; }
+    .spec-row { padding: 1rem; }
     .spec-icon { width: 50px; font-size: 1.8rem; }
     .spec-details p { font-size: 1rem; }
 }
