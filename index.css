@@ -3,6 +3,7 @@
     --card-bg: #1e293b;
     --accent: #38bdf8;
     --neon-green: #22c55e;
+    --neon-blue: #00d4ff;
     --text-main: #f1f5f9;
     --text-dim: #94a3b8;
 }
@@ -19,20 +20,39 @@ html {
 }
 
 body {
-    background-color: var(--main-bg);
+    background: 
+        linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), 
+        url('logooo.png');
+    background-size: auto, 100px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: #0a0f1a;
     color: var(--text-main);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.8;
     overflow-x: hidden;
 }
 
-article {
-    scroll-margin-top: 100px; /* Dopasuj tę wartość do wysokości Twojego menu */
+/* --- ANIMACJA POJAWIANIA SIĘ ZDJĘCIA --- */
+.main-photo {
+    animation: photoIn 1.5s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes photoIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
 }
 
 /* --- HEADER --- */
 .top-header {
-    background: #020617;
+    background: transparent;
     padding: 1rem 2rem;
     border-bottom: 2px solid var(--accent);
 }
@@ -44,14 +64,12 @@ article {
     max-width: 1400px;
     margin: 0 auto;
     flex-wrap: wrap;
-    gap: 1rem;
 }
 
 .brand {
     font-weight: 900;
     letter-spacing: 2px;
     color: var(--accent);
-    flex: 1;
 }
 
 .huge-title {
@@ -60,38 +78,12 @@ article {
     color: var(--neon-green);
     text-shadow: 3px 3px 0px #000;
     transform: rotate(-2deg);
-    flex: 2;
-    text-align: center;
-}
-
-.header-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-}
-
-.digital-clock {
-    font-family: monospace;
-    font-size: 1.2rem;
-    color: var(--neon-green);
-    background: #000;
-    padding: 4px 12px;
-    border-radius: 5px;
-    border: 1px solid var(--neon-green);
-    box-shadow: 0 0 10px rgba(34, 197, 94, 0.3);
 }
 
 .contact-top a {
     font-size: 0.85rem;
     color: var(--accent);
     text-decoration: none;
-    transition: 0.3s;
-}
-
-.contact-top a:hover {
-    color: var(--text-main);
 }
 
 /* --- NAWIGACJA --- */
@@ -110,7 +102,6 @@ nav ul {
     justify-content: center;
     gap: 2rem;
     list-style: none;
-    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -118,14 +109,11 @@ nav ul li a {
     color: var(--text-main);
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--accent);
-}
+nav ul li a:hover { color: var(--accent); }
 
 /* --- HERO BANNER --- */
 .hero-banner {
@@ -142,11 +130,7 @@ nav ul li a:hover {
     border: 3px solid var(--card-bg);
 }
 
-.main-photo {
-    width: 100%;
-    display: block;
-    transition: 0.5s;
-}
+.main-photo { width: 100%; display: block; }
 
 .photo-overlay {
     position: absolute;
@@ -169,95 +153,59 @@ nav ul li a:hover {
 }
 
 article {
-    background: var(--card-bg);
+    background-color: rgba(17, 25, 40, 0.8) !important;
+    backdrop-filter: blur(5px);
     padding: 2.5rem;
     border-radius: 1rem;
     margin-bottom: 3rem;
     border-left: 5px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    scroll-margin-top: 100px;
 }
 
-article h3 {
+/* --- SEKCJA HARDWARE (NOWA) --- */
+.setup-section {
+    padding: 4rem 0;
+}
+
+.setup-container-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.spec-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid rgba(56, 189, 248, 0.1);
+    transition: 0.3s;
+}
+
+.spec-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.icon-spec {
     font-size: 2rem;
     color: var(--accent);
-    margin-bottom: 1.5rem;
-    text-transform: uppercase;
-}
-
-article p {
-    color: var(--text-dim);
     margin-bottom: 1rem;
 }
 
-/* --- FOOTER & SOCIALS --- */
-.main-footer {
-    background: #020617;
-    padding: 3rem 1rem;
-    text-align: center;
-    border-top: 1px solid rgba(56, 189, 248, 0.2);
-}
+.neon-text-green { color: var(--neon-green); font-weight: bold; text-shadow: 0 0 5px rgba(34, 197, 94, 0.2); }
+.neon-text-blue { color: var(--neon-blue); font-weight: bold; text-shadow: 0 0 5px rgba(0, 212, 255, 0.2); }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    list-style: none;
-    margin-bottom: 2rem;
-    flex-wrap: wrap;
-}
-
-.social-icons a {
-    color: var(--accent);
-    text-decoration: none;
-    font-weight: 700;
-    border: 2px solid var(--accent);
-    padding: 0.6rem 1.2rem;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background: transparent;
-}
-
-.social-icons a:hover {
-    transform: scale(1.1);
-    color: #fff;
-}
-
-.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; }
-.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; }
-.social-icons a.icon-tt:hover { background: #ff0050; border-color: #ff0050; }
-.social-icons a.icon-x:hover { background: #000; border-color: #fff; }
-.social-icons a.icon-gh:hover { background: #333; border-color: #333; }
-
-.main-footer p {
-    color: var(--text-dim);
-    font-size: 0.9rem;
-}
-
-/* --- STYLE SLIDERA GIER --- */
-.games-slider-section {
-    margin-top: 4rem;
-    text-align: center;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    color: var(--neon-green);
-    font-family: 'Comic Neue', cursive;
-    margin-bottom: 2rem;
-    text-shadow: 2px 2px 0px #000;
-}
+/* --- SLIDER GIER --- */
+.games-slider-section { margin-bottom: 5rem; }
 
 .slider-wrapper {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
     border-radius: 20px;
     overflow: hidden;
     border: 3px solid var(--accent);
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
 }
 
 .slider-track {
@@ -265,12 +213,7 @@ article p {
     aspect-ratio: 16 / 9;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Ukrywa pasek przewijania w Firefox */
-    scroll-behavior: smooth;
-}
-
-.slider-track::-webkit-scrollbar {
-    display: none; /* Ukrywa pasek w Chrome/Safari */
+    scrollbar-width: none;
 }
 
 .slider-track img {
@@ -287,69 +230,55 @@ article p {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 10;
 }
 
 .slider-nav a {
-    width: 12px;
-    height: 12px;
+    width: 12px; height: 12px;
     border-radius: 50%;
     background: #fff;
     opacity: 0.5;
-    transition: 0.3s;
     border: 2px solid var(--accent);
 }
 
-.slider-nav a:hover {
-    opacity: 1;
-    background: var(--neon-green);
-    transform: scale(1.3);
+.slider-nav a:hover { background: var(--neon-green); opacity: 1; }
+
+/* --- FOOTER --- */
+.main-footer {
+    background: #020617;
+    padding: 3rem 1rem;
+    text-align: center;
 }
 
-/* Kropka po kliknięciu błyśnie na zielono */
-.slider-nav a:active {
-    background: var(--neon-green);
-    box-shadow: 0 0 15px var(--neon-green);
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 2rem;
 }
 
-.slider-track img {
-    scroll-margin-top: 100px; 
+.social-icons a {
+    color: var(--accent);
+    text-decoration: none;
+    border: 2px solid var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    transition: 0.3s;
+    font-size: 0.8rem;
 }
 
-/* Płynne przewijanie do kotwic (ważne dla nawigacji slidera) */
-html {
-    scroll-behavior: smooth;
+.social-icons a:hover { transform: scale(1.1); background: var(--accent); color: #000; }
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    font-family: 'Comic Neue', cursive;
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-body {
-    /* To nakłada shurikeny na całe tło strony */
-    background: 
-        linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), /* Ciemna warstwa przyciemniająca */
-        url('logooo.png'); /* Twoje shurikeny */
-    background-size: auto, 100px; /* Pierwsze to gradient, drugie to wielkość shurikena */
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-color: #0a0f1a; /* Kolor bazowy Twojej strony */
-}
-
-/* KLUCZOWE: Musisz sprawić, żeby sekcje na górze nie miały 
-   własnego, pełnego tła, które wszystko zakrywa */
-header, .hero-section, .start-section {
-    background: transparent !important;
-}
-
-/* Jeśli sekcje mają być trochę ciemniejsze niż samo tło, 
-   użyj rgba zamiast zwykłego koloru */
-article, section {
-    background-color: rgba(17, 25, 40, 0.8) !important; /* 0.8 to lekka przezroczystość */
-    backdrop-filter: blur(5px); /* Opcjonalnie: fajny efekt rozmycia pod spodem */
-}
-
-/* RESPONSIVE */
 @media (max-width: 768px) {
-    .header-container { flex-direction: column; text-align: center; }
-    .header-right { align-items: center; }
-    .huge-title { font-size: 2rem; order: -1; }
-    nav ul { gap: 0.5rem; }
-    article { padding: 1.5rem; }
+    .huge-title { font-size: 2rem; }
+    .setup-container-grid { grid-template-columns: 1fr; }
+    nav ul { gap: 1rem; }
 }
