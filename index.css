@@ -1,173 +1,238 @@
-/* RESET I PODSTAWA */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --main-bg: #0f172a;
+    --card-bg: #1e293b;
+    --accent: #38bdf8;
+    --neon-green: #22c55e;
+    --neon-blue: #00d4ff;
+    --text-main: #f1f5f9;
+    --text-dim: #94a3b8;
 }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-    background-color: #0b111e;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden; /* Naprawa przesuwania w nicość */
+    background: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.png');
+    background-size: auto, 100px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: #0a0f1a;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden; /* BLOKADA PRZESUWANIA W PRAWO */
 }
 
-/* HEADER I NAWIGACJA */
-header {
-    background: #050a14;
-    padding: 10px 0;
-    border-bottom: 2px solid #3498db;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* --- ANIMACJE --- */
+.main-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: slideUpFade 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.top-bar {
+@keyframes slideUpFade {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* --- HEADER --- */
+.top-header {
+    background: transparent;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid var(--accent);
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Responsywność loga/tytułu */
+    gap: 1rem;
 }
 
-.main-title {
-    color: #2ecc71;
-    font-size: 1.8rem;
-    text-shadow: 2px 2px #000;
+.brand { 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    color: var(--accent);
+    font-size: 1.5rem;
 }
 
-.nickname { color: #3498db; font-weight: bold; }
-
-nav ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    background: #0d1526;
-    margin-top: 10px;
-    padding: 10px;
-    flex-wrap: wrap; /* Naprawa menu na telefonie - teraz przejdzie do 2 linii */
+.huge-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: clamp(2rem, 8vw, 4rem); /* Elastyczny rozmiar czcionki */
+    color: var(--neon-green);
+    text-shadow: 4px 4px 0px #000;
+    transform: rotate(-2deg);
+    text-align: center;
 }
 
-nav ul li { margin: 5px 15px; }
+.contact-top a { 
+    font-size: 1rem;
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: 700;
+}
+
+/* --- NAWIGACJA (NAPRAWA MENU) --- */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+}
+
+nav ul { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1rem; 
+    list-style: none; 
+    flex-wrap: wrap; /* LINKI PRZECHODZĄ DO NOWEJ LINII ZAMIAST WYPYCHAĆ STRONĘ */
+}
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    font-weight: bold;
+    color: var(--text-main);
+    font-weight: 700;
+    text-transform: uppercase;
     font-size: 0.9rem;
-    transition: color 0.3s;
+    padding: 0.5rem 0.8rem;
+    transition: 0.3s;
+    display: inline-block;
 }
 
-nav ul li a:hover { color: #2ecc71; }
+nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 
-/* SEKCJE */
-.content-box {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 25px;
-    background: #161f2e;
-    border-left: 5px solid #3498db;
-    border-radius: 8px;
-}
+/* --- HERO BANNER --- */
+.hero-banner { display: flex; justify-content: center; padding: 2rem 1rem; }
 
-.hero {
-    text-align: center;
+.hero-img-container {
     position: relative;
     max-width: 800px;
-    margin: 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--card-bg);
 }
 
-.hero-img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.5);
-}
-
-.hero-badge {
+.photo-overlay {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
-    background: #2ecc71;
-    padding: 5px 15px;
-    font-weight: bold;
+    bottom: 10px;
+    left: 10px;
+    background: var(--neon-green);
+    color: #000;
+    padding: 0.4rem 0.8rem;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 900;
     transform: rotate(-3deg);
+    box-shadow: 3px 3px 0px #000;
+    font-size: 0.8rem;
 }
 
-/* TABELA SPECYFIKACJI */
-.specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 15px;
+/* --- CONTENT --- */
+.container-fluid { max-width: 900px; margin: 0 auto; padding: 1rem; }
+
+article {
+    background-color: rgba(17, 25, 40, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--accent);
+    scroll-margin-top: 100px;
 }
 
-.spec-item {
-    background: #0d1526;
-    padding: 15px;
-    border-radius: 5px;
+article h3 { font-size: 1.8rem; color: var(--accent); margin-bottom: 1rem; }
+
+/* --- SEKCJA HARDWARE --- */
+.setup-section { padding: 2rem 0; width: 100%; }
+
+.setup-wide-container {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    width: 100%;
 }
 
-/* SLIDER GIER */
-.slider-container {
+.spec-row {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 20px;
-    padding: 20px;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
 }
 
-.slider-container img {
-    max-width: 100%;
-    border-radius: 10px;
-    scroll-snap-align: center;
-}
-
-/* STOPKA I SOCJALE */
-footer {
+.spec-icon {
+    font-size: 2rem;
+    color: var(--accent);
+    width: 60px;
     text-align: center;
-    padding: 40px 20px;
-    background: #050a14;
 }
 
-.social-links {
+.spec-details h4 { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
+.spec-details p { font-size: 1.1rem; font-weight: 700; }
+
+.neon-text-green { color: var(--neon-green); }
+.neon-text-blue { color: var(--neon-blue); }
+
+/* --- SLIDER --- */
+.section-title { font-size: 2rem; color: var(--neon-green); text-align: center; margin-bottom: 1.5rem; font-family: 'Comic Neue'; }
+
+.slider-wrapper { position: relative; border-radius: 15px; overflow: hidden; border: 3px solid var(--accent); }
+
+.slider-track { display: flex; aspect-ratio: 16 / 9; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+
+.slider-track img { flex: 0 0 100%; width: 100%; height: auto; object-fit: cover; scroll-snap-align: start; }
+
+/* --- FOOTER SOCIALS --- */
+.main-footer { background: #020617; padding: 3rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
+
+.social-icons {
     display: flex;
     justify-content: center;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
 }
 
-.social-btn {
-    padding: 10px 20px;
-    border-radius: 20px;
+.social-icons a {
+    color: #ffffff;
     text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border: 2px solid #3498db;
+    font-weight: 700;
+    border: 2px solid var(--accent);
+    padding: 0.6rem 1rem;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-/* RWD - TELEFONY */
-@media (max-width: 600px) {
-    .top-bar {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .main-title { font-size: 1.4rem; margin: 10px 0; }
-    
-    nav ul {
-        padding: 5px;
-    }
+.social-icons a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px currentColor; 
+}
 
-    nav ul li {
-        margin: 5px 8px;
-        font-size: 0.8rem;
-    }
+/* RESPONSYWNOŚĆ MOBILNA */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; text-align: center; }
+    .brand { order: 2; }
+    .huge-title { order: 1; margin: 0; }
+    .header-right { order: 3; }
+    
+    .spec-row { flex-direction: row; text-align: left; }
+    .spec-icon { width: 50px; font-size: 1.5rem; }
+}
 
-    .content-box {
-        margin: 15px;
-        padding: 15px;
-    }
+@media (max-width: 480px) {
+    nav ul { gap: 0.5rem; }
+    nav ul li a { font-size: 0.75rem; padding: 0.4rem 0.6rem; }
+    article { padding: 1.5rem; }
 }
