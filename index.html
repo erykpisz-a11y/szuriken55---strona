@@ -3,89 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szuriken55 - Moja Strona</title>
+    <title>Szuriken55 | Gaming & IT Blog</title>
+    <meta name="description" content="Oficjalny blog Szuriken55 - pasja do gier, technologii IT i edukacji. Sprawdź moje recenzje i projekty!">
+    <link rel="icon" href="shuriken.ico" type="image/x-icon">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+   
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <header>
-        <div class="top-bar">
-            <span class="nickname">SZURIKEN55</span>
-            <h1 class="main-title">MOJA STRONA</h1>
-            <div class="contact-info">
-                <span class="clock" id="clock">00:00:00</span>
-                <a href="mailto:pisz.eryk.tc@edu.zstjaslo.pl" class="email">pisz.eryk.tc@edu.zstjaslo.pl</a>
+    <header class="top-header">
+        <div class="header-container">
+            <div class="brand">SZURIKEN55</div>
+            <div class="huge-title">MOJA STRONA</div>
+            <div class="header-right">
+                <div class="contact-top">
+                    <a href="mailto:pisz.eryk.tc@edu.zstjaslo.pl">pisz.eryk.tc@edu.zstjaslo.pl</a>
+                </div>
             </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#start">START</a></li>
-                <li><a href="#omnie">O MNIE</a></li>
-                <li><a href="#edu">EDU</a></li>
-                <li><a href="#gry">GRY</a></li>
-                <li><a href="#it">IT</a></li>
-                <li><a href="#ulubione">ULUBIONE GRY</a></li>
-                <li><a href="#mojpc">MÓJ PC</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <main>
-        <section id="start" class="hero">
-            <img src="profilowe.jpg" alt="Moje zdjęcie" class="hero-img" width="800" height="600">
-            <div class="hero-badge">THIS IS MY PAGE!</div>
-        </section>
+    <nav>
+        <ul>
+            <li><a href="#">Start</a></li>
+            <li><a href="#o-mnie">O mnie</a></li>
+            <li><a href="#edu">Edu</a></li>
+            <li><a href="#gry">Gry</a></li>
+            <li><a href="#it">IT</a></li>
+            <li><a href="#ulubione-gry">Ulubione Gry</a></li>
+            <li><a href="#setup">Mój PC</a></li>
+        </ul>
+    </nav>
 
-        <section id="omnie" class="content-box">
-            <h2>O MNIE</h2>
-            <p>Witaj w moim cyfrowym świecie! Nazywam się Eryk, ale w sieci znajdziesz mnie pod nickiem <strong>Szuriken55</strong>. Jestem pasjonatem nowoczesnych technologii...</p>
-            <p>Stosuję tutaj techniki takie jak <strong>Flexbox</strong> oraz <strong>CSS Scroll Snap</strong>, aby udowodnić, że można stworzyć płynną i responsywną stronę.</p>
-        </section>
-
-        <section id="edu" class="content-box">
-            <h2>EDUKACJA I ROZWÓJ</h2>
-            <p>Obecnie kształcę się w <strong>Zespole Szkół Technicznych w Jaśle (ZST Jasło)</strong>, na kierunku informatycznym.</p>
-        </section>
-
-        <section id="ulubione" class="games-slider">
-            <h2>Moje ulubione gry</h2>
-            <div class="slider-container">
-                <img src="cyberpunk.jpg" alt="Cyberpunk 2077" width="1200" height="675" loading="lazy">
-                <img src="witcher.jpg" alt="Wiedźmin 3" width="1200" height="675" loading="lazy">
+    <main class="wrapper">
+        <section class="hero-banner">
+            <div class="hero-img-container">
+                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo" width="800" height="600">
+                <div class="photo-overlay">THIS IS MY PAGE!</div>
             </div>
         </section>
 
-        <section id="mojpc" class="content-box pc-specs">
-            <h2>MÓJ PC</h2>
-            <div class="specs-grid">
-                <div class="spec-item"><strong>Procesor:</strong> Intel Core i7-6700</div>
-                <div class="spec-item"><strong>Karta Graficzna:</strong> GTX 1660 SUPER 6GB</div>
-                <div class="spec-item"><strong>Pamięć RAM:</strong> 16GB DDR4 2400MHz</div>
-                <div class="spec-item"><strong>Dysk SSD:</strong> Polion 512GB SATA III</div>
-                <div class="spec-item"><strong>Monitor:</strong> MSI G242L E14 144Hz</div>
-                <div class="spec-item"><strong>Zasilacz:</strong> Rebeltec TITAN 600W</div>
-            </div>
-        </section>
+        <div class="container-fluid">
+            <article id="o-mnie">
+                <h3>O mnie</h3>
+                <p>Witaj w moim cyfrowym świecie! Nazywam się Eryk, ale w sieci znajdziesz mnie pod nickiem <strong>Szuriken55</strong>. Jestem pasjonatem nowoczesnych technologii, który każdą wolną chwilę poświęca na zgłębianie tajników świata IT oraz analizowanie mechanik w najnowszych produkcjach gamingowych.</p>
+                <p>Stosuję tutaj techniki takie jak <strong>Flexbox</strong> oraz <strong>CSS Scroll Snap</strong>, aby udowodnić, że można stworzyć płynną, responsywną i efektowną stronę internetową bez zbędnych skryptów.</p>
+            </article>
+
+            <article id="edu">
+                <h3>Edukacja i Rozwój</h3>
+                <p>Obecnie kształcę się w <strong>Zespole Szkół Technicznych w Jaśle (ZST Jasło)</strong>, na kierunku informatycznym. To tutaj kładę fundamenty pod moją przyszłą karierę zawodową.</p>
+            </article>
+
+            <article id="gry">
+                <h3>Strefa Gamingu</h3>
+                <p>Gaming to dla mnie coś więcej niż tylko rozrywka – to ogromna część mojego życia i fascynacja interaktywną narracją.</p>
+            </article>
+
+            <article id="it">
+                <h3>Świat IT i Hardware</h3>
+                <p>Świat IT zmienia się niemal każdego dnia, a ja staram się być na bieżąco. Fascynuje mnie zarówno warstwa sprzętowa (hardware), jak i nowoczesne rozwiązania software'owe.</p>
+            </article>
+
+            <section id="ulubione-gry" class="games-slider-section">
+                <h3 class="section-title">Moje ulubione gry</h3>
+                <div class="slider-wrapper">
+                    <div class="slider-track">
+                        <img id="game-1" src="https://cdn1.epicgames.com/offer/77f2b98e2cef40c8a7437518bf420e47/EGS_Cyberpunk2077_CDPROJEKTRED_S1_03_2560x1440-359e77d3cd0a40aebf3bbc130d14c5c7" alt="Cyberpunk 2077" width="1280" height="720" loading="lazy">
+                        <img id="game-2" src="https://gaming-cdn.com/images/products/268/orig/the-witcher-3-wild-hunt-pc-gog-com-cover.jpg?v=1761661629" alt="The Witcher 3" width="1280" height="720" loading="lazy">
+                        <img id="game-3" src="https://image.api.playstation.com/vulcan/img/rnd/202111/0506/hcFeWRVGHYK72uOw6Mn6f4Ms.jpg" alt="Elden Ring" width="1280" height="720" loading="lazy">
+                        <img id="game-4" src="https://static.android.com.pl/uploads/2023/09/Counter-Strike-2-CS2.png" alt="CS2" width="1280" height="720" loading="lazy">
+                        <img id="game-5" src="https://gaming-cdn.com/images/products/12567/orig/minecraft-java-bedrock-edition-pc-cover.jpg?v=1768710858" alt="Minecraft" width="1280" height="720" loading="lazy">
+                    </div>
+                    <div class="slider-nav">
+                        <a href="#game-1"></a>
+                        <a href="#game-2"></a>
+                        <a href="#game-3"></a>
+                        <a href="#game-4"></a>
+                        <a href="#game-5"></a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="setup" class="setup-section">
+                <h3 class="section-title">Moja Specyfikacja PC</h3>
+                <div class="setup-wide-container">
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="spec-details">
+                            <h4>Procesor</h4>
+                            <p class="neon-text-green">Intel Core i7-6700</p>
+                        </div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="spec-details">
+                            <h4>Karta Graficzna</h4>
+                            <p class="neon-text-blue">NVIDIA GeForce GTX 1660 SUPER 6GB</p>
+                        </div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-memory"></i></div>
+                        <div class="spec-details">
+                            <h4>Pamięć RAM</h4>
+                            <p class="neon-text-green">16GB DDR4 3200MHz</p>
+                        </div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                        <div class="spec-details">
+                            <h4>Dysk SSD</h4>
+                            <p class="neon-text-blue">GOODRAM SSD CX400 1TB SATA III</p>
+                        </div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <div class="spec-details">
+                            <h4>Główny Monitor</h4>
+                            <p class="neon-text-green">MSI G242L E14 (1920x1080 IPS 144Hz)</p>
+                        </div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-power-off"></i></div>
+                        <div class="spec-details">
+                            <h4>Zasilacz</h4>
+                            <p class="neon-text-blue">Rebeltec TITAN 600W</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="social-links">
-            <a href="#" class="social-btn yt">YouTube</a>
-            <a href="#" class="social-btn twitch">Twitch</a>
-            <a href="#" class="social-btn tiktok">TikTok</a>
-            <a href="#" class="social-btn twitter">Twitter</a>
-            <a href="#" class="social-btn github">GitHub</a>
+    <footer class="main-footer">
+        <div class="footer-content">
+            <ul class="social-icons">
+                <li><a href="https://www.youtube.com/@szuriken5575" target="_blank" class="icon-yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+                <li><a href="https://www.twitch.tv/szuriken55" target="_blank" class="icon-tw"><i class="fa-brands fa-twitch"></i> Twitch</a></li>
+                <li><a href="https://www.tiktok.com/@szuriken55" target="_blank" class="icon-tt"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+                <li><a href="https://twitter.com/szuriken55" target="_blank" class="icon-x"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
+                <li><a href="https://github.com/erykpisz-a11y" target="_blank" class="icon-gh"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            </ul>
+            <p>&copy; 2026 Szuriken55. Wszelkie prawa zastrzeżone.</p>
         </div>
-        <p>&copy; 2026 Szuriken55. Wszelkie prawa zastrzeżone.</p>
     </footer>
-
-    <script>
-        function updateClock() {
-            const now = new Date();
-            document.getElementById('clock').innerText = now.toLocaleTimeString();
-        }
-        setInterval(updateClock, 1000);
-        updateClock();
-    </script>
 </body>
 </html>
