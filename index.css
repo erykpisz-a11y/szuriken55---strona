@@ -8,21 +8,12 @@
     --text-dim: #94a3b8;
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-    scroll-behavior: smooth;
-    font-size: 16px;
-}
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
-    background: 
-        linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), 
-        url('logooo.png');
+    background: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.png');
     background-size: auto, 100px;
     background-repeat: repeat;
     background-attachment: fixed;
@@ -33,21 +24,16 @@ body {
     overflow-x: hidden;
 }
 
-/* --- ANIMACJA POJAWIANIA SIĘ ZDJĘCIA --- */
+/* --- EFEKT POJAWIANIA SIĘ ZDJĘCIA --- */
 .main-photo {
-    animation: photoIn 1.5s ease-out forwards;
-    opacity: 0;
+    width: 100%;
+    display: block;
+    animation: slideUpFade 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-@keyframes photoIn {
-    from {
-        opacity: 0;
-        transform: translateX(-50px) scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0) scale(1);
-    }
+@keyframes slideUpFade {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
 }
 
 /* --- HEADER --- */
@@ -63,14 +49,9 @@ body {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
-    flex-wrap: wrap;
 }
 
-.brand {
-    font-weight: 900;
-    letter-spacing: 2px;
-    color: var(--accent);
-}
+.brand { font-weight: 900; letter-spacing: 2px; color: var(--accent); }
 
 .huge-title {
     font-family: 'Comic Neue', cursive;
@@ -80,11 +61,7 @@ body {
     transform: rotate(-2deg);
 }
 
-.contact-top a {
-    font-size: 0.85rem;
-    color: var(--accent);
-    text-decoration: none;
-}
+.contact-top a { font-size: 0.85rem; color: var(--accent); text-decoration: none; }
 
 /* --- NAWIGACJA --- */
 nav {
@@ -97,12 +74,7 @@ nav {
     border-bottom: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    list-style: none;
-}
+nav ul { display: flex; justify-content: center; gap: 2rem; list-style: none; }
 
 nav ul li a {
     text-decoration: none;
@@ -116,11 +88,7 @@ nav ul li a {
 nav ul li a:hover { color: var(--accent); }
 
 /* --- HERO BANNER --- */
-.hero-banner {
-    display: flex;
-    justify-content: center;
-    padding: 3rem 1rem;
-}
+.hero-banner { display: flex; justify-content: center; padding: 3rem 1rem; }
 
 .hero-img-container {
     position: relative;
@@ -129,8 +97,6 @@ nav ul li a:hover { color: var(--accent); }
     overflow: hidden;
     border: 3px solid var(--card-bg);
 }
-
-.main-photo { width: 100%; display: block; }
 
 .photo-overlay {
     position: absolute;
@@ -146,14 +112,10 @@ nav ul li a:hover { color: var(--accent); }
 }
 
 /* --- CONTENT --- */
-.container-fluid {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 1rem;
-}
+.container-fluid { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
 
 article {
-    background-color: rgba(17, 25, 40, 0.8) !important;
+    background-color: rgba(17, 25, 40, 0.8);
     backdrop-filter: blur(5px);
     padding: 2.5rem;
     border-radius: 1rem;
@@ -162,123 +124,70 @@ article {
     scroll-margin-top: 100px;
 }
 
-/* --- SEKCJA HARDWARE (NOWA) --- */
-.setup-section {
-    padding: 4rem 0;
+article h3 { font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+/* --- SEKCJA HARDWARE (TABELA SZEROKA) --- */
+.setup-section { padding: 4rem 0; width: 100%; }
+
+.setup-wide-container {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    width: 100%;
 }
 
-.setup-container-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2rem;
-}
-
-.spec-card {
-    background: var(--card-bg);
-    padding: 1.5rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid rgba(56, 189, 248, 0.1);
+.spec-row {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
     transition: 0.3s;
 }
 
-.spec-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--accent);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
+.spec-row:last-child { border-bottom: none; }
 
-.icon-spec {
-    font-size: 2rem;
+.spec-row:hover { background: rgba(56, 189, 248, 0.05); }
+
+.spec-icon {
+    font-size: 2.5rem;
     color: var(--accent);
-    margin-bottom: 1rem;
+    width: 80px;
+    text-align: center;
 }
 
-.neon-text-green { color: var(--neon-green); font-weight: bold; text-shadow: 0 0 5px rgba(34, 197, 94, 0.2); }
-.neon-text-blue { color: var(--neon-blue); font-weight: bold; text-shadow: 0 0 5px rgba(0, 212, 255, 0.2); }
+.spec-details h4 { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; }
 
-/* --- SLIDER GIER --- */
-.games-slider-section { margin-bottom: 5rem; }
+.spec-details p { font-size: 1.3rem; font-weight: 700; }
 
-.slider-wrapper {
-    position: relative;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 3px solid var(--accent);
-}
+.neon-text-green { color: var(--neon-green); text-shadow: 0 0 10px rgba(34, 197, 94, 0.3); }
+.neon-text-blue { color: var(--neon-blue); text-shadow: 0 0 10px rgba(0, 212, 255, 0.3); }
 
-.slider-track {
-    display: flex;
-    aspect-ratio: 16 / 9;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-}
+/* --- SLIDER --- */
+.section-title { font-size: 2.5rem; color: var(--neon-green); text-align: center; margin-bottom: 2rem; font-family: 'Comic Neue'; }
 
-.slider-track img {
-    flex: 0 0 100%;
-    width: 100%;
-    object-fit: cover;
-    scroll-snap-align: start;
-}
+.slider-wrapper { border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
 
-.slider-nav {
-    display: flex;
-    gap: 15px;
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
+.slider-track { display: flex; aspect-ratio: 16 / 9; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
 
-.slider-nav a {
-    width: 12px; height: 12px;
-    border-radius: 50%;
-    background: #fff;
-    opacity: 0.5;
-    border: 2px solid var(--accent);
-}
+.slider-track img { flex: 0 0 100%; width: 100%; object-fit: cover; scroll-snap-align: start; }
 
-.slider-nav a:hover { background: var(--neon-green); opacity: 1; }
+.slider-nav { display: flex; gap: 15px; position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); }
+
+.slider-nav a { width: 12px; height: 12px; border-radius: 50%; background: #fff; opacity: 0.5; border: 2px solid var(--accent); }
 
 /* --- FOOTER --- */
-.main-footer {
-    background: #020617;
-    padding: 3rem 1rem;
-    text-align: center;
-}
+.main-footer { background: #020617; padding: 3rem 1rem; text-align: center; }
 
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    margin-bottom: 2rem;
-}
+.social-icons { display: flex; justify-content: center; gap: 1rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
 
-.social-icons a {
-    color: var(--accent);
-    text-decoration: none;
-    border: 2px solid var(--accent);
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-    transition: 0.3s;
-    font-size: 0.8rem;
-}
+.social-icons a { color: var(--accent); text-decoration: none; border: 2px solid var(--accent); padding: 0.5rem 1rem; border-radius: 50px; transition: 0.3s; }
 
 .social-icons a:hover { transform: scale(1.1); background: var(--accent); color: #000; }
 
-.section-title {
-    font-size: 2.5rem;
-    color: var(--neon-green);
-    font-family: 'Comic Neue', cursive;
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 @media (max-width: 768px) {
-    .huge-title { font-size: 2rem; }
-    .setup-container-grid { grid-template-columns: 1fr; }
-    nav ul { gap: 1rem; }
+    .header-container { flex-direction: column; text-align: center; }
+    .huge-title { font-size: 2rem; margin: 10px 0; }
+    .spec-row { flex-direction: column; text-align: center; padding: 1rem; }
+    .spec-icon { margin-bottom: 10px; width: 100%; }
 }
