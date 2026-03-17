@@ -17,9 +17,6 @@
 </head>
 <body>
 
-    <div class="side-logo side-logo-left"></div>
-    <div class="side-logo side-logo-right"></div>
-
     <header class="top-header">
         <div class="header-container">
             <div class="brand">SZURIKEN55</div>
@@ -47,7 +44,7 @@
     <main class="wrapper">
         <section class="hero-banner">
             <div class="hero-img-container">
-                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo animate-fade-in">
+                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo">
                 <div class="photo-overlay">THIS IS MY PAGE!</div>
             </div>
         </section>
@@ -55,13 +52,23 @@
         <div class="container-fluid">
             <article id="o-mnie">
                 <h3>O mnie</h3>
-                <p>Witaj w moim cyfrowym świecie! Nazywam się Eryk, ale w sieci znajdziesz mnie pod nickiem <strong>Szuriken55</strong>. Jestem pasjonatem nowoczesnych technologii, który każdą wolną chwilę poświęca na zgłębianie tajników świata IT oraz analizowanie mechanik w najnowszych produkcjach gamingowych.</p>
+                <p>Witaj w moim cyfrowym świecie! Nazywam się Eryk, ale w sieci znajdziesz mnie pod nickiem <strong>Szuriken55</strong>. Jestem pasjonatem nowoczesnych technologii, który każdą wolną chwilę poświęca na zgłębianie tajników świata IT oraz analizowanie mechanik w najnowszych produkcjach gamingowych. Ta strona to nie tylko projekt zaliczeniowy, to mój własny poligon doświadczalny.</p>
                 <p>Stosuję tutaj techniki takie jak <strong>Flexbox</strong> oraz <strong>CSS Scroll Snap</strong>, aby udowodnić, że można stworzyć płynną, responsywną i efektowną stronę internetową bez zbędnych skryptów.</p>
             </article>
 
             <article id="edu">
                 <h3>Edukacja i Rozwój</h3>
-                <p>Obecnie kształcę się w <strong>Zespole Szkół Technicznych w Jaśle (ZST Jasło)</strong>, na kierunku informatycznym. To tutaj kładę fundamenty pod moją przyszłą karierę zawodową.</p>
+                <p>Obecnie kształcę się w <strong>Zespole Szkół Technicznych w Jaśle (ZST Jasło)</strong>, na kierunku informatycznym. To tutaj kładę fundamenty pod moją przyszłą karierę zawodową. Moja nauka nie ogranicza się jedynie do siedzenia w ławce – staram się samodzielnie realizować projekty po godzinach.</p>
+            </article>
+
+            <article id="gry">
+                <h3>Strefa Gamingu</h3>
+                <p>Gaming to dla mnie coś więcej niż tylko rozrywka – to ogromna część mojego życia i fascynacja interaktywną narracją. Uwielbiam analizować mechaniki gier, od balansu rozgrywki po skomplikowane systemy ekonomiczne.</p>
+            </article>
+
+            <article id="it">
+                <h3>Świat IT i Hardware</h3>
+                <p>Świat IT zmienia się niemal każdego dnia, a ja staram się być na bieżąco. Fascynuje mnie zarówno warstwa sprzętowa (hardware), jak i nowoczesne rozwiązania software'owe.</p>
             </article>
 
             <section id="ulubione-gry" class="games-slider-section">
@@ -85,37 +92,49 @@
             </section>
 
             <section id="setup" class="setup-section">
-                <h3 class="section-title">Mój Hardware</h3>
-                <div class="setup-container-grid">
-                    <div class="spec-card">
-                        <i class="fa-solid fa-microchip icon-spec"></i>
-                        <h4>Procesor</h4>
-                        <p class="neon-text-green">Intel Core i7-6700</p>
+                <h3 class="section-title">Pełna Specyfikacja PC</h3>
+                <div class="setup-wide-container">
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-microchip"></i></div>
+                        <div class="spec-details">
+                            <h4>Procesor</h4>
+                            <p class="neon-text-green">Intel Core i7-6700</p>
+                        </div>
                     </div>
-                    <div class="spec-card">
-                        <i class="fa-solid fa-video icon-spec"></i>
-                        <h4>Karta Graficzna</h4>
-                        <p class="neon-text-blue">GTX 1660 SUPER 6GB</p>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-video"></i></div>
+                        <div class="spec-details">
+                            <h4>Karta Graficzna</h4>
+                            <p class="neon-text-blue">NVIDIA GeForce GTX 1660 SUPER 6GB</p>
+                        </div>
                     </div>
-                    <div class="spec-card">
-                        <i class="fa-solid fa-memory icon-spec"></i>
-                        <h4>Pamięć RAM</h4>
-                        <p class="neon-text-green">16GB DDR4 2400MHz</p>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-memory"></i></div>
+                        <div class="spec-details">
+                            <h4>Pamięć RAM</h4>
+                            <p class="neon-text-green">16GB DDR4 2400MHz</p>
+                        </div>
                     </div>
-                    <div class="spec-card">
-                        <i class="fa-solid fa-hard-drive icon-spec"></i>
-                        <h4>Dysk SSD</h4>
-                        <p class="neon-text-blue">Polion 512GB SATA III</p>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-hard-drive"></i></div>
+                        <div class="spec-details">
+                            <h4>Dysk SSD</h4>
+                            <p class="neon-text-blue">Polion 512GB SATA III</p>
+                        </div>
                     </div>
-                    <div class="spec-card">
-                        <i class="fa-solid fa-desktop icon-spec"></i>
-                        <h4>Główny Monitor</h4>
-                        <p class="neon-text-green">MSI G242L E14 144Hz</p>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-desktop"></i></div>
+                        <div class="spec-details">
+                            <h4>Główny Monitor</h4>
+                            <p class="neon-text-green">MSI G242L E14 (1920x1080 IPS 144Hz)</p>
+                        </div>
                     </div>
-                    <div class="spec-card">
-                        <i class="fa-solid fa-power-off icon-spec"></i>
-                        <h4>Zasilacz</h4>
-                        <p>Rebeltec TITAN 600W</p>
+                    <div class="spec-row">
+                        <div class="spec-icon"><i class="fa-solid fa-power-off"></i></div>
+                        <div class="spec-details">
+                            <h4>Zasilacz</h4>
+                            <p class="neon-text-blue">Rebeltec TITAN 600W</p>
+                        </div>
                     </div>
                 </div>
             </section>
