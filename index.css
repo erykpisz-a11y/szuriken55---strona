@@ -1,213 +1,222 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Szuriken55 | Gaming & IT Blog</title>
-    <meta name="description" content="Oficjalny blog Szuriken55 - pasja do gier, technologii IT i edukacji. Sprawdź moje recenzje i projekty!">
-    <link rel="icon" href="shuriken.ico" type="image/x-icon">
-    
-    <link rel="preload" href="zdj.jpg" as="image" fetchpriority="high">
+:root {
+    --main-bg: #0f172a;
+    --card-bg: #1e293b;
+    --accent: #38bdf8;
+    --neon-green: #22c55e;
+    --neon-blue: #00d4ff;
+    --text-main: #f1f5f9;
+    --text-dim: #94a3b8;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-    
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
-    
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
-    <header class="top-header">
-        <div class="header-container">
-            <div class="brand">SZURIKEN55</div>
-            <div class="huge-title">MOJA STRONA</div>
-            <div class="header-right">
-                <div class="contact-top">
-                    <a href="mailto:pisz.eryk.tc@edu.zstjaslo.pl">pisz.eryk.tc@edu.zstjaslo.pl</a>
-                </div>
-            </div>
-        </div>
-    </header>
+body {
+    /* OPTYMALIZACJA: Ustawienie koloru w pierwszej kolejności */
+    background-color: #0a0f1a;
+    background-image: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.png');
+    background-size: auto, 100px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.8;
+    overflow-x: hidden;
+}
 
-    <nav>
-        <ul>
-            <li><a href="#">Start</a></li>
-            <li><a href="#o-mnie">O mnie</a></li>
-            <li><a href="#edu">Edu</a></li>
-            <li><a href="#gry">Gry</a></li>
-            <li><a href="#it">IT</a></li>
-            <li><a href="#ulubione-gry">Ulubione Gry</a></li>
-            <li><a href="#setup">Mój PC</a></li>
-        </ul>
-    </nav>
+/* --- HEADER --- */
+.top-header {
+    background: transparent;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid var(--accent);
+}
 
-    <main class="wrapper">
-        <section class="hero-banner">
-            <div class="hero-img-container">
-                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo" width="800" height="600" fetchpriority="high" decoding="async">
-                <div class="photo-overlay">THIS IS MY PAGE!</div>
-            </div>
-        </section>
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
 
-        <div class="container-fluid">
-        <article id="o-mnie">
-          <h2>O mnie</h2>
-          <p>
-            Witaj w moim cyfrowym świecie! Nazywam się Eryk, ale w sieci
-            znajdziesz mnie pod nickiem <strong>Szuriken55</strong>. Jestem
-            pasjonatem nowoczesnych technologii, który każdą wolną chwilę
-            poświęca na zgłębianie tajników świata IT oraz analizowanie mechanik
-            w najnowszych produkcjach gamingowych. Moim celem jest połączenie
-            pasji do tworzenia treści z profesjonalnym podejściem do
-            programowania.
-          </p>
-          <p>
-            Moja przygoda z komputerami zaczęła się już dawno temu, ale to
-            właśnie teraz czuję, że webdevelopment to ścieżka, którą chcę
-            podążać. Stosuję tutaj techniki takie jak
-            <strong>Flexbox</strong> oraz <strong>CSS Scroll Snap</strong>, aby
-            stworzyć responsywną stronę internetową, która jest nie tylko
-            estetyczna, ale i funkcjonalna. Nieustannie eksperymentuję z nowymi
-            bibliotekami, aby moje projekty były zawsze na najwyższym poziomie.
-          </p>
-        </article>
+.brand { 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    color: var(--accent);
+    font-size: 2rem;
+}
 
-        <article id="edu">
-          <h2>Edukacja i Rozwój</h2>
-          <p>
-            Obecnie kształcę się w
-            <strong>Zespole Szkół Technicznych w Jaśle (ZST Jasło)</strong>, na
-            kierunku informatycznym. To tutaj kładę fundamenty pod moją przyszłą
-            karierę zawodową, ucząc się budowy sieci, administracji systemami
-            oraz podstaw algorytmiki.
-          </p>
-          <p>
-            Poza zajęciami szkolnymi biorę udział w kursach online i śledzę
-            najnowsze trendy w branży IT. Wierzę, że w zawodzie informatyka
-            kluczowa jest samodyscyplina i ciągłe poszerzanie horyzontów,
-            dlatego codziennie poświęcam czas na naukę nowych języków
-            programowania i rozwiązywanie problemów logicznych.
-          </p>
-        </article>
+.huge-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--neon-green);
+    text-shadow: 4px 4px 0px #000;
+    transform: rotate(-2deg);
+    text-align: center;
+}
 
-        <article id="gry">
-          <h2>Strefa Gamingu</h2>
-          <p>
-            Gaming to dla mnie coś więcej niż tylko rozrywka – to ogromna część
-            mojego życia i fascynacja interaktywną narracją. Szczególną uwagę
-            poświęcam tytułom z otwartym światem oraz e-sportowym zmaganiom,
-            które wymagają refleksu i strategicznego myślenia.
-          </p>
-          <p>
-            Interesuje mnie nie tylko sama rozgrywka, ale również proces
-            powstawania gier – od pierwszych szkiców koncepcyjnych po
-            optymalizację kodu. Na moim blogu staram się dzielić spostrzeżeniami
-            na temat balansu rozgrywki oraz nowatorskich rozwiązań, które
-            wprowadzają deweloperzy w najnowszych hitach.
-          </p>
-        </article>
+.contact-top a { 
+    font-size: 1.2rem;
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: 700;
+}
 
-        <article id="it">
-          <h2>Świat IT i Hardware</h2>
-          <p>
-            Świat IT zmienia się niemal każdego dnia, a ja staram się być na
-            bieżąco z każdą technologiczną nowinką. Fascynuje mnie zarówno
-            warstwa sprzętowa (hardware), jak i nowoczesne rozwiązania
-            software'owe, które ułatwiają nam codzienne życie.
-          </p>
-          <p>
-            Uwielbiam śledzić premiery nowych podzespołów komputerowych,
-            analizować testy wydajności procesorów oraz kart graficznych. Wiedza
-            o tym, jak dobrać odpowiednie komponenty, pozwala mi nie tylko
-            budować wydajne maszyny, ale także lepiej rozumieć ograniczenia i
-            możliwości współczesnego oprogramowania.
-          </p>
-        </article>
+/* --- NAWIGACJA --- */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+}
 
-            <section id="ulubione-gry" class="games-slider-section">
-                <h3 class="section-title">Moje ulubione gry</h3>
-                <div class="slider-wrapper">
-                    <div class="slider-track">
-                        <img id="game-1" src="cyberp.webp" alt="Cyberpunk 2077" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-2" src="witcher3.webp" alt="The Witcher 3" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-3" src="elden.webp" alt="Elden Ring" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-4" src="cs2.webp" alt="CS2" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-5" src="mc.webp" alt="Minecraft" width="800" height="450" loading="lazy" decoding="async">
-                    </div>
-                    <div class="slider-nav">
-                        <a href="#game-1"></a>
-                        <a href="#game-2"></a>
-                        <a href="#game-3"></a>
-                        <a href="#game-4"></a>
-                        <a href="#game-5"></a>
-                    </div>
-                </div>
-            </section>
+nav ul { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem; 
+    list-style: none; 
+    flex-wrap: wrap;
+}
 
-            <section id="setup" class="setup-section">
-                <h3 class="section-title">Moja Specyfikacja PC</h3>
-                <div class="setup-wide-container">
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-microchip"></i></div>
-                        <div class="spec-details">
-                            <h4>Procesor</h4>
-                            <p class="neon-text-green">Intel Core i7-6700</p>
-                        </div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-video"></i></div>
-                        <div class="spec-details">
-                            <h4>Karta Graficzna</h4>
-                            <p class="neon-text-blue">NVIDIA GeForce GTX 1660 SUPER 6GB</p>
-                        </div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-memory"></i></div>
-                        <div class="spec-details">
-                            <h4>Pamięć RAM</h4>
-                            <p class="neon-text-green">16GB DDR4 3200MHz</p>
-                        </div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-hard-drive"></i></div>
-                        <div class="spec-details">
-                            <h4>Dysk SSD</h4>
-                            <p class="neon-text-blue">GOODRAM SSD CX400 1TB SATA III</p>
-                        </div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-desktop"></i></div>
-                        <div class="spec-details">
-                            <h4>Główny Monitor</h4>
-                            <p class="neon-text-green">MSI G242L E14 (1920x1080 IPS 144Hz)</p>
-                        </div>
-                    </div>
-                    <div class="spec-row">
-                        <div class="spec-icon"><i class="fa-solid fa-power-off"></i></div>
-                        <div class="spec-details">
-                            <h4>Zasilacz</h4>
-                            <p class="neon-text-blue">Rebeltec TITAN 600W</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    transition: 0.3s;
+}
 
-    <footer class="main-footer">
-        <div class="footer-content">
-            <ul class="social-icons">
-                <li><a href="https://www.youtube.com/@szuriken5575" target="_blank" class="icon-yt"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
-                <li><a href="https://www.twitch.tv/szuriken55" target="_blank" class="icon-tw"><i class="fa-brands fa-twitch"></i> Twitch</a></li>
-                <li><a href="https://www.tiktok.com/@szuriken55" target="_blank" class="icon-tt"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
-                <li><a href="https://twitter.com/szuriken55" target="_blank" class="icon-x"><i class="fa-brands fa-x-twitter"></i> Twitter</a></li>
-                <li><a href="https://github.com/erykpisz-a11y" target="_blank" class="icon-gh"><i class="fa-brands fa-github"></i> GitHub</a></li>
-            </ul>
-            <p>&copy; 2026 Szuriken55. Wszelkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
-</body>
-</html>
+nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+/* --- HERO BANNER --- */
+.hero-banner { display: flex; justify-content: center; padding: 3rem 1rem; }
+.hero-img-container {
+    position: relative;
+    max-width: 800px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--card-bg);
+}
+.main-photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: slideUpFade 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    /* OPTYMALIZACJA: will-change wymusza użycie akceleracji sprzętowej na smartfonach */
+    will-change: transform, opacity;
+}
+
+@keyframes slideUpFade {
+    0% { transform: translateY(50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--neon-green);
+    color: #000;
+    padding: 0.5rem 1rem;
+    font-family: 'Comic Neue', cursive;
+    font-weight: 900;
+    transform: rotate(-3deg);
+    box-shadow: 4px 4px 0px #000;
+}
+
+/* --- CONTENT --- */
+.container-fluid { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
+article {
+    background-color: rgba(17, 25, 40, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--accent);
+    scroll-margin-top: 100px;
+}
+article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
+
+/* --- SLIDER (POPRAWIONY) --- */
+.section-title { font-size: 2.5rem; color: var(--neon-green); text-align: center; margin-bottom: 2rem; font-family: 'Comic Neue'; }
+.slider-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
+
+.slider-track { 
+    display: flex; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
+    scroll-behavior: smooth;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slider-track img { 
+    flex: 0 0 100%;
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    scroll-snap-align: start; 
+}
+
+.slider-nav { 
+    display: flex; gap: 15px; position: absolute; bottom: 20px; left: 50%; 
+    transform: translateX(-50%); z-index: 10;
+}
+.slider-nav a { 
+    width: 15px; height: 15px; border-radius: 50%; background: #fff; 
+    opacity: 0.7; border: 2px solid var(--accent); transition: 0.3s;
+}
+.slider-nav a:hover { opacity: 1; background: var(--accent); transform: scale(1.2); }
+
+/* --- SEKCJA HARDWARE --- */
+.setup-section { padding: 2rem 0; width: 100%; }
+.setup-wide-container {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    width: 100%;
+}
+.spec-row {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+}
+.spec-icon { font-size: 2.5rem; color: var(--accent); width: 80px; text-align: center; }
+.spec-details h4 { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; }
+.spec-details p { font-size: 1.3rem; font-weight: 700; }
+.neon-text-green { color: var(--neon-green); }
+.neon-text-blue { color: var(--neon-blue); }
+
+/* --- SOCIAL MEDIA --- */
+.main-footer { background: #020617; padding: 4rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
+.social-icons a {
+    color: #fff; text-decoration: none; font-weight: 700; border: 2px solid var(--accent);
+    padding: 0.8rem 1.6rem; font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
+    display: flex; align-items: center; gap: 10px;
+}
+.social-icons a:hover { transform: scale(1.1); color: #fff; }
+.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; box-shadow: 0 0 20px #9146ff; }
+.social-icons a.icon-tt:hover { background: #000; border-color: #fff; box-shadow: 0 0 20px #fff; }
+.social-icons a.icon-x:hover { background: #000; border-color: #555; box-shadow: 0 0 20px #555; }
+.social-icons a.icon-gh:hover { background: #333; border-color: #333; box-shadow: 0 0 20px #333; }
+
+/* RESPONSYWNOŚĆ */
+@media (max-width: 768px) {
+    .header-container { flex-direction: column; text-align: center; }
+    .brand { order: 2; font-size: 1.5rem; }
+    .huge-title { order: 1; font-size: 2.2rem; margin-bottom: 10px; }
+    .spec-row { padding: 1rem; }
+    .spec-icon { width: 50px; font-size: 1.8rem; }
+    .spec-details p { font-size: 1rem; }
+}
