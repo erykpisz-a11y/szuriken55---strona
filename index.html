@@ -7,11 +7,15 @@
     <meta name="description" content="Oficjalny blog Szuriken55 - pasja do gier, technologii IT i edukacji. Sprawdź moje recenzje i projekty!">
     <link rel="icon" href="shuriken.ico" type="image/x-icon">
     
+    <link rel="preload" href="zdj.jpg" as="image" fetchpriority="high">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -43,7 +47,7 @@
     <main class="wrapper">
         <section class="hero-banner">
             <div class="hero-img-container">
-                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo" width="800" height="600">
+                <img src="zdj.jpg" alt="Eryk - Szuriken55" class="main-photo" width="800" height="600" fetchpriority="high" decoding="async">
                 <div class="photo-overlay">THIS IS MY PAGE!</div>
             </div>
         </section>
@@ -127,11 +131,11 @@
                 <h3 class="section-title">Moje ulubione gry</h3>
                 <div class="slider-wrapper">
                     <div class="slider-track">
-                        <img id="game-1" src="cyberp.webp" alt="Cyberpunk 2077">
-                        <img id="game-2" src="witcher3.webp" alt="The Witcher 3">
-                        <img id="game-3" src="elden.webp" alt="Elden Ring">
-                        <img id="game-4" src="cs2.webp" alt="CS2">
-                        <img id="game-5" src="mc.webp" alt="Minecraft">
+                        <img id="game-1" src="cyberp.webp" alt="Cyberpunk 2077" width="800" height="450" loading="lazy" decoding="async">
+                        <img id="game-2" src="witcher3.webp" alt="The Witcher 3" width="800" height="450" loading="lazy" decoding="async">
+                        <img id="game-3" src="elden.webp" alt="Elden Ring" width="800" height="450" loading="lazy" decoding="async">
+                        <img id="game-4" src="cs2.webp" alt="CS2" width="800" height="450" loading="lazy" decoding="async">
+                        <img id="game-5" src="mc.webp" alt="Minecraft" width="800" height="450" loading="lazy" decoding="async">
                     </div>
                     <div class="slider-nav">
                         <a href="#game-1"></a>
