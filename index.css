@@ -24,6 +24,19 @@ body {
     overflow-x: hidden;
 }
 
+/* Klasa dla czytników ekranowych ukrywająca elementy wizualnie bez psucia layoutu i walidacji */
+.visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
 /* --- HEADER --- */
 .top-header {
     background: transparent;
@@ -107,6 +120,7 @@ nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
 .main-photo {
     width: 100%;
     height: auto;
+    aspect-ratio: 1024 / 765; /* Fix dla przesunięć układu CLS */
     display: block;
     animation: slideUpFade 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
     /* OPTYMALIZACJA: will-change wymusza użycie akceleracji sprzętowej na smartfonach */
@@ -161,6 +175,7 @@ article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
     flex: 0 0 100%;
     width: 100%; 
     height: auto;
+    aspect-ratio: 16 / 9; /* Fix dla przesunięć układu CLS */
     object-fit: cover; 
     scroll-snap-align: start; 
 }
