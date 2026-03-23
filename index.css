@@ -12,6 +12,7 @@
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
+    /* OPTYMALIZACJA: Ustawienie koloru w pierwszej kolejności */
     background-color: #0a0f1a;
     background-image: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.png');
     background-size: auto, 100px;
@@ -24,37 +25,96 @@ body {
 }
 
 /* --- HEADER --- */
-.top-header { padding: 2rem 1rem; border-bottom: 2px solid var(--accent); }
-.header-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; flex-wrap: wrap; gap: 1rem; }
-.brand { font-weight: 900; color: var(--accent); font-size: 2rem; }
-.huge-title { font-family: 'Comic Neue', cursive; font-size: clamp(2.5rem, 8vw, 4rem); color: var(--neon-green); text-shadow: 4px 4px 0px #000; transform: rotate(-2deg); text-align: center; }
+.top-header {
+    background: transparent;
+    padding: 2rem 1rem;
+    border-bottom: 2px solid var(--accent);
+}
 
-/* --- HERO BANNER (POPRAWIONE WYŚRODKOWANIE) --- */
-.hero-banner { 
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand { 
+    font-weight: 900; 
+    letter-spacing: 2px; 
+    color: var(--accent);
+    font-size: 2rem;
+}
+
+.huge-title {
+    font-family: 'Comic Neue', cursive;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    color: var(--neon-green);
+    text-shadow: 4px 4px 0px #000;
+    transform: rotate(-2deg);
+    text-align: center;
+}
+
+.contact-top a { 
+    font-size: 1.2rem;
+    color: var(--accent); 
+    text-decoration: none; 
+    font-weight: 700;
+}
+
+/* --- NAWIGACJA --- */
+nav {
+    position: sticky;
+    top: 0;
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 2px solid rgba(56, 189, 248, 0.3);
+}
+
+nav ul { 
     display: flex; 
     justify-content: center; 
-    padding: 3rem 1rem; 
-    width: 100%;
+    gap: 1.5rem; 
+    list-style: none; 
+    flex-wrap: wrap;
 }
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.5rem 0.8rem;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
+
+/* --- HERO BANNER --- */
+.hero-banner { display: flex; justify-content: center; padding: 3rem 1rem; }
 .hero-img-container {
     position: relative;
     max-width: 800px;
-    width: 100%;
     border-radius: 20px;
     overflow: hidden;
     border: 3px solid var(--card-bg);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .main-photo {
     width: 100%;
-    height: auto; /* Fix dla CLS */
+    height: auto;
     display: block;
-    animation: slideUpFade 1.5s ease-out both;
+    animation: slideUpFade 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    /* OPTYMALIZACJA: will-change wymusza użycie akceleracji sprzętowej na smartfonach */
     will-change: transform, opacity;
 }
 
 @keyframes slideUpFade {
-    0% { transform: translateY(30px); opacity: 0; }
+    0% { transform: translateY(50px); opacity: 0; }
     100% { transform: translateY(0); opacity: 1; }
 }
 
@@ -71,17 +131,92 @@ body {
     box-shadow: 4px 4px 0px #000;
 }
 
-/* --- POZOSTAŁE STYLE --- */
+/* --- CONTENT --- */
 .container-fluid { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
-article { background: rgba(17, 25, 40, 0.8); padding: 2rem; border-radius: 1rem; margin-bottom: 2rem; border-left: 5px solid var(--accent); }
+article {
+    background-color: rgba(17, 25, 40, 0.8);
+    backdrop-filter: blur(5px);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--accent);
+    scroll-margin-top: 100px;
+}
+article h3 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
 
-/* Slider Fix */
-.slider-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
-.slider-track img { flex: 0 0 100%; width: 100%; height: auto; scroll-snap-align: start; }
+/* --- SLIDER (POPRAWIONY) --- */
+.section-title { font-size: 2.5rem; color: var(--neon-green); text-align: center; margin-bottom: 2rem; font-family: 'Comic Neue'; }
+.slider-wrapper { position: relative; border-radius: 20px; overflow: hidden; border: 3px solid var(--accent); }
 
-/* Mobile optimization */
+.slider-track { 
+    display: flex; 
+    overflow-x: auto; 
+    scroll-snap-type: x mandatory; 
+    scrollbar-width: none; 
+    scroll-behavior: smooth;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slider-track img { 
+    flex: 0 0 100%;
+    width: 100%; 
+    height: auto;
+    object-fit: cover; 
+    scroll-snap-align: start; 
+}
+
+.slider-nav { 
+    display: flex; gap: 15px; position: absolute; bottom: 20px; left: 50%; 
+    transform: translateX(-50%); z-index: 10;
+}
+.slider-nav a { 
+    width: 15px; height: 15px; border-radius: 50%; background: #fff; 
+    opacity: 0.7; border: 2px solid var(--accent); transition: 0.3s;
+}
+.slider-nav a:hover { opacity: 1; background: var(--accent); transform: scale(1.2); }
+
+/* --- SEKCJA HARDWARE --- */
+.setup-section { padding: 2rem 0; width: 100%; }
+.setup-wide-container {
+    background: rgba(30, 41, 59, 0.7);
+    border-radius: 20px;
+    border: 1px solid var(--accent);
+    overflow: hidden;
+    width: 100%;
+}
+.spec-row {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(56, 189, 248, 0.1);
+}
+.spec-icon { font-size: 2.5rem; color: var(--accent); width: 80px; text-align: center; }
+.spec-details h4 { font-size: 0.9rem; color: var(--text-dim); text-transform: uppercase; }
+.spec-details p { font-size: 1.3rem; font-weight: 700; }
+.neon-text-green { color: var(--neon-green); }
+.neon-text-blue { color: var(--neon-blue); }
+
+/* --- SOCIAL MEDIA --- */
+.main-footer { background: #020617; padding: 4rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
+.social-icons a {
+    color: #fff; text-decoration: none; font-weight: 700; border: 2px solid var(--accent);
+    padding: 0.8rem 1.6rem; font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
+    display: flex; align-items: center; gap: 10px;
+}
+.social-icons a:hover { transform: scale(1.1); color: #fff; }
+.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
+.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; box-shadow: 0 0 20px #9146ff; }
+.social-icons a.icon-tt:hover { background: #000; border-color: #fff; box-shadow: 0 0 20px #fff; }
+.social-icons a.icon-x:hover { background: #000; border-color: #555; box-shadow: 0 0 20px #555; }
+.social-icons a.icon-gh:hover { background: #333; border-color: #333; box-shadow: 0 0 20px #333; }
+
+/* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; text-align: center; }
-    .huge-title { font-size: 2.2rem; }
-    article { padding: 1.5rem; }
+    .brand { order: 2; font-size: 1.5rem; }
+    .huge-title { order: 1; font-size: 2.2rem; margin-bottom: 10px; }
+    .spec-row { padding: 1rem; }
+    .spec-icon { width: 50px; font-size: 1.8rem; }
+    .spec-details p { font-size: 1rem; }
 }
