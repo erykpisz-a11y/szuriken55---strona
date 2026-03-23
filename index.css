@@ -13,7 +13,7 @@ html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
     background-color: #0a0f1a;
-    background-image: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.png');
+    background-image: linear-gradient(rgba(10, 15, 26, 0.9), rgba(10, 15, 26, 0.9)), url('logooo.webp');
     background-size: auto, 100px;
     background-repeat: repeat;
     background-attachment: fixed;
