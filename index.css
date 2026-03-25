@@ -119,13 +119,6 @@ nav ul li a:hover { color: var(--accent); text-shadow: 0 0 10px var(--accent); }
     height: auto;
     aspect-ratio: 1024 / 765;
     display: block;
-    animation: slideUpFade 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-    will-change: transform, opacity;
-}
-
-@keyframes slideUpFade {
-    0% { transform: translateY(50px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
 }
 
 .photo-overlay {
@@ -210,38 +203,47 @@ article h2 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
 .neon-text-green { color: var(--neon-green); }
 .neon-text-blue { color: var(--neon-blue); }
 
-/* --- SOCIAL MEDIA --- */
-.main-footer { background: #020617; padding: 4rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
-.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; padding: 0; }
-
-.social-icons a {
-    color: #fff; 
-    text-decoration: none; 
-    border: 2px solid var(--accent);
-    padding: 0; 
-    font-size: 1.2rem; 
-    border-radius: 50px; 
-    transition: transform 0.2s; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    width: 50px; 
-    height: 50px;
+/* --- SOCIAL MEDIA (STARA, KLASYCZNA WERSJA) --- */
+.main-footer { 
+    background: #020617; 
+    padding: 4rem 1rem; 
+    text-align: center; 
+    border-top: 2px solid rgba(56, 189, 248, 0.2); 
 }
 
-.social-icons a:hover { transform: scale(1.1); }
-.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; }
-.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; }
-.social-icons a.icon-tt:hover { background: #000; border-color: #fff; }
-.social-icons a.icon-x:hover { background: #000; border-color: #555; }
-.social-icons a.icon-gh:hover { background: #333; border-color: #333; }
+.social-icons { 
+    display: flex; 
+    justify-content: center; 
+    gap: 1.5rem; 
+    list-style: none; 
+    margin-bottom: 2rem; 
+    flex-wrap: wrap; 
+    padding: 0; 
+}
+
+.social-icons a {
+    color: var(--accent); 
+    font-size: 2rem; /* Większy rozmiar starych ikon */
+    text-decoration: none; 
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.social-icons a:hover { 
+    color: var(--neon-green); 
+    transform: translateY(-5px); 
+}
 
 /* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
     .header-container { flex-direction: column; text-align: center; }
     .brand { order: 2; font-size: 1.5rem; }
     .huge-title { order: 1; font-size: 2.2rem; margin-bottom: 10px; }
+    
     .spec-row { padding: 1rem; }
     .spec-icon { width: 50px; font-size: 1.8rem; }
     .spec-details p { font-size: 1rem; }
+    
+    .social-icons { gap: 1rem; }
+    .social-icons a { font-size: 1.5rem; padding: 10px; }
 }
