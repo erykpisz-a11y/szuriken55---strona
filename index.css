@@ -215,8 +215,10 @@ article h2 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
 .social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
 .social-icons a {
     color: #fff; text-decoration: none; font-weight: 700; border: 2px solid var(--accent);
-    padding: 0.8rem 1.6rem; font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
-    display: flex; align-items: center; gap: 10px;
+    padding: 1rem 1.6rem; /* Delikatnie powiększony margines góra-dół */
+    font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    min-height: 48px; /* Żelazna gwarancja wymiarów dla Google */
 }
 .social-icons a:hover { transform: scale(1.1); color: #fff; }
 .social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
