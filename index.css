@@ -212,20 +212,29 @@ article h2 { font-size: 2.2rem; color: var(--accent); margin-bottom: 1.5rem; }
 
 /* --- SOCIAL MEDIA --- */
 .main-footer { background: #020617; padding: 4rem 1rem; text-align: center; border-top: 2px solid rgba(56, 189, 248, 0.2); }
-.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; }
+.social-icons { display: flex; justify-content: center; gap: 1.5rem; list-style: none; margin-bottom: 2rem; flex-wrap: wrap; padding: 0; }
+
 .social-icons a {
-    color: #fff; text-decoration: none; font-weight: 700; border: 2px solid var(--accent);
-    padding: 1rem 1.6rem; /* Delikatnie powiększony margines góra-dół */
-    font-size: 1.2rem; border-radius: 50px; transition: 0.3s;
-    display: flex; align-items: center; justify-content: center; gap: 10px;
-    min-height: 48px; /* Żelazna gwarancja wymiarów dla Google */
+    color: #fff; 
+    text-decoration: none; 
+    border: 2px solid var(--accent);
+    padding: 0; /* Zerujemy padding, żeby min-width/height przejęły kontrolę */
+    font-size: 1.2rem; 
+    border-radius: 50px; 
+    transition: transform 0.2s; /* Tylko transform dla lepszej wydajności */
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    width: 50px;  /* Stała szerokość */
+    height: 50px; /* Stała wysokość - Google to pokocha (powyżej 48px) */
 }
-.social-icons a:hover { transform: scale(1.1); color: #fff; }
-.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; box-shadow: 0 0 20px #ff0000; }
-.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; box-shadow: 0 0 20px #9146ff; }
-.social-icons a.icon-tt:hover { background: #000; border-color: #fff; box-shadow: 0 0 20px #fff; }
-.social-icons a.icon-x:hover { background: #000; border-color: #555; box-shadow: 0 0 20px #555; }
-.social-icons a.icon-gh:hover { background: #333; border-color: #333; box-shadow: 0 0 20px #333; }
+
+.social-icons a:hover { transform: scale(1.1); }
+.social-icons a.icon-yt:hover { background: #ff0000; border-color: #ff0000; }
+.social-icons a.icon-tw:hover { background: #9146ff; border-color: #9146ff; }
+.social-icons a.icon-tt:hover { background: #000; border-color: #fff; }
+.social-icons a.icon-x:hover { background: #000; border-color: #555; }
+.social-icons a.icon-gh:hover { background: #333; border-color: #333; }
 
 /* RESPONSYWNOŚĆ */
 @media (max-width: 768px) {
