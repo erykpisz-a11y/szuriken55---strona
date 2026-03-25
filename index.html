@@ -6,24 +6,23 @@
     <title>Szuriken55 | Gaming & IT Blog</title>
     <meta name="description" content="Oficjalny blog Szuriken55 - pasja do gier, technologii IT i edukacji. Sprawdź moje recenzje i projekty!">
     <link rel="icon" href="shuriken.ico" type="image/x-icon">
-    
-    <link rel="stylesheet" href="index.css">
 
+    <link rel="preload" href="index.css" as="style">
     <link rel="preload" href="zdj.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="index.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
-    
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap"></noscript>
-    
-    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+    
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Montserrat:wght@400;700;900&display=swap">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </noscript>
 </head>
 <body>
 
@@ -138,11 +137,11 @@
                 <h3 class="section-title">Moje ulubione gry</h3>
                 <div class="slider-wrapper">
                     <div class="slider-track">
-                        <img id="game-1" src="cybbb.webp" alt="Cyberpunk 2077" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-2" src="witcher3.webp" alt="The Witcher 3" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-3" src="elden.webp" alt="Elden Ring" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-4" src="cs2logo.webp" alt="CS2" width="800" height="450" loading="lazy" decoding="async">
-                        <img id="game-5" src="mc.webp" alt="Minecraft" width="800" height="450" loading="lazy" decoding="async">
+                        <img id="game-1" src="cybbb.webp" alt="Cyberpunk 2077" width="800" height="450" loading="lazy" decoding="async" fetchpriority="low">
+                        <img id="game-2" src="witcher3.webp" alt="The Witcher 3" width="800" height="450" loading="lazy" decoding="async" fetchpriority="low">
+                        <img id="game-3" src="elden.webp" alt="Elden Ring" width="800" height="450" loading="lazy" decoding="async" fetchpriority="low">
+                        <img id="game-4" src="cs2logo.webp" alt="CS2" width="800" height="450" loading="lazy" decoding="async" fetchpriority="low">
+                        <img id="game-5" src="mc.webp" alt="Minecraft" width="800" height="450" loading="lazy" decoding="async" fetchpriority="low">
                     </div>
                     <div class="slider-nav">
                         <a href="#game-1" aria-label="Cyberpunk 2077"></a>
@@ -206,13 +205,13 @@
 
     <footer class="main-footer">
         <div class="footer-content">
-<ul class="social-icons">
-    <li><a href="#" class="icon-yt" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
-    <li><a href="#" class="icon-tw" aria-label="Twitch"><i class="fa-brands fa-twitch"></i></a></li>
-    <li><a href="#" class="icon-tt" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a></li>
-    <li><a href="#" class="icon-x" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-    <li><a href="#" class="icon-gh" aria-label="GitHub"><i class="fa-brands fa-github"></i></a></li>
-</ul>
+            <ul class="social-icons">
+                <li><a href="TWÓJ_LINK_DO_YOUTUBE" class="icon-yt" aria-label="YouTube" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="TWÓJ_LINK_DO_TWITCH" class="icon-tw" aria-label="Twitch" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitch"></i></a></li>
+                <li><a href="TWÓJ_LINK_DO_TIKTOK" class="icon-tt" aria-label="TikTok" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-tiktok"></i></a></li>
+                <li><a href="TWÓJ_LINK_DO_X" class="icon-x" aria-label="Twitter" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a></li>
+                <li><a href="TWÓJ_LINK_DO_GITHUB" class="icon-gh" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
+            </ul>
             <p>&copy; 2026 Szuriken55. Wszelkie prawa zastrzeżone.</p>
         </div>
     </footer>
