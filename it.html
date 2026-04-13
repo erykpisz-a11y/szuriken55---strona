@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT & Hardware | Szuriken55</title>
+    <link rel="stylesheet" href="index.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* CSS TYLKO DLA TEJ PODSTRONY (DODANE W HTML) */
+        .subpage-content { padding: 40px 20px; max-width: 1000px; margin: 0 auto; }
+        
+        .back-btn { 
+            display: inline-block; margin-bottom: 20px; color: var(--accent); 
+            text-decoration: none; font-weight: bold; border: 1px solid var(--accent); 
+            padding: 10px 20px; border-radius: 50px; transition: 0.3s; 
+        }
+        .back-btn:hover { background: var(--accent); color: #000; }
+        
+        .it-card { 
+            background: rgba(17, 25, 40, 0.9); padding: 30px; 
+            border-radius: 20px; border: 1px solid var(--accent); 
+        }
+
+        /* NOWE: Styl dla zdjęcia komputera */
+        .pc-build-img { 
+            width: 100%; max-height: 450px; 
+            object-fit: cover; /* Zdjęcie wypełnia ramkę bez rozciągania */
+            border-radius: 15px; margin: 20px 0; 
+            border: 2px solid var(--accent); /* Niebieska obramówka pasująca do IT */
+        }
+    </style>
+</head>
+<body>
+    <div class="subpage-content">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Powrót do Startu</a>
+        <div class="it-card">
+            <h1>Świat IT i Hardware</h1>
+            <p>Technologia to nie tylko gry, to styl życia.</p>
+            
+            <img src="komputer.jpg" alt="Budowa komputera - Hardware" class="pc-build-img">
+            
+            <ul>
+                <li>Budowa i serwis komputerów</li>
+                <li>Konfiguracja sieci domowych</li>
+                <li>Programowanie front-endu (HTML/CSS)</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
